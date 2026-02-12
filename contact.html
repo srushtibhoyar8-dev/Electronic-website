@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h2>ElectroShop</h2>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<form id="contactForm" class="contact">
+  <h2>Contact Us</h2>
+
+  <input id="name" placeholder="Name">
+  <span class="error" id="nameErr"></span>
+
+  <input id="email" placeholder="Email">
+  <span class="error" id="emailErr"></span>
+
+  <textarea id="msg" placeholder="Message"></textarea>
+  <span class="error" id="msgErr"></span>
+
+  <button>Submit</button>
+</form>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div>
+      <h3>ElectroShop</h3>
+      <p>Best electronics at affordable prices.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="products.html">Products</a><br>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Email: info@electroshop.com</p>
+      <p>Phone: +91 9876543210</p>
+    </div>
+
+  </div>
+
+  <p class="copy">
+    © 2026 ElectroShop | All Rights Reserved
+  </p>
+</footer>
+
+
+<script src="js/contact.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
