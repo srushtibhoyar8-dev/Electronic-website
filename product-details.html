@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ElectroShop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <style>
+        .details-container {
+            display: flex;
+            gap: 40px;
+            padding: 40px 10%;
+            margin-top: 80px;
+            min-height: 80vh;
+        }
+       
+        .image-gallery { flex: 1; text-align: center; }
+        .main-img-container img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .thumb-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .thumb-row img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .thumb-row img:hover { border-color: #ff4757; }
+
+       
+        .content-section { flex: 1; }
+        .content-section h1 { font-size: 2.5rem; color: #333; margin-bottom: 10px; }
+        .price-tag { font-size: 1.8rem; color: #27ae60; font-weight: bold; margin-bottom: 20px; }
+        .description { font-size: 1.1rem; color: #666; line-height: 1.6; margin-bottom: 30px; }
+        
+        .action-btns { display: flex; gap: 20px; }
+        .btn-add-cart {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-add-cart:hover { background: #e84118; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .details-container { flex-direction: column; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-left">
+        <h2 class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">ElectroShop</h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+    </ul>
+</header>
+
+<div class="details-container" id="product-view">
+    </div>
+
+<script src="js/products.js"></script>
+<script>
+   
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+ 
+    const currentProduct = products.find(p => p.id == productId);
+
+    if (currentProduct) {
+        const view = document.getElementById('product-view');
+        view.innerHTML = `
+<div class="image-gallery">
+    <div class="main-img-container">
+        <img id="featured" src="${currentProduct.moreImgs[0]}" alt="${currentProduct.name}">
+    </div>
+
+    <div class="thumb-row">
+        ${currentProduct.moreImgs.map(img => `
+            <img src="${img}" onclick="document.getElementById('featured').src='${img}'">
+        `).join('')}
+    </div>
+</div>
+
+<div class="content-section">
+    <h1>${currentProduct.name}</h1>
+    <p class="price-tag">₹${currentProduct.price}</p>
+
+    <p><b>Color:</b> ${currentProduct.color}</p>
+    <p><b>Warranty:</b> ${currentProduct.warranty}</p>
+    <p><b>Size:</b> ${currentProduct.size}</p>
+
+    <p class="description">${currentProduct.desc}</p>
+
+    <div class="action-btns">
+        <button class="btn-add-cart" onclick="addCart(${currentProduct.id})">
+            Add to Cart
+        </button>
+    </div>
+</div>
+`;
+
+    } else {
+        document.getElementById('product-view').innerHTML = "<h2>Product Not Found!</h2>";
+    }
+</script>
+
+</body>
+</html>

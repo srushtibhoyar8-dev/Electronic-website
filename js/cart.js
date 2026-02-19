@@ -4,7 +4,7 @@ function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// ADD TO CART
+
 function addCart(id) {
   const product = products.find(p => p.id === id);
   cart.push(product);
@@ -12,14 +12,13 @@ function addCart(id) {
   alert("Added to cart");
 }
 
-// REMOVE FROM CART
+
 function removeCart(index) {
   cart.splice(index, 1);
   saveCart();
   showCart();
 }
 
-// SHOW CART
 function showCart() {
   const container = document.querySelector(".cart-items");
   if (!container) return;

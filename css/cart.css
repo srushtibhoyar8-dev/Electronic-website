@@ -1,0 +1,103 @@
+/* Heading Center */
+h1 {
+    text-align: center;
+    color: #232f3e;
+    margin-top: 20px;
+}
+
+/* Cart Container */
+.cart-items {
+    max-width: 800px;
+    margin: 0 auto; /* Center alignment */
+    padding: 20px;
+}
+
+/* Individual Cart Item Row */
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+/* Cart Image Styling */
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Image fategi nahi */
+    margin-right: 20px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Item Details */
+.cart-details {
+    flex-grow: 1; /* Bachi hui jagah lega */
+}
+
+.cart-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.cart-details p {
+    color: #B12704;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Remove Button */
+.remove-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Total Price Section */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+/***** Extra Responsive Cart *****/
+@media (max-width: 600px) {
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-item img {
+        margin: 0 0 15px 0;
+        width: 80px;
+        height: 80px;
+    }
+
+    .cart-details h3 {
+        font-size: 16px;
+    }
+
+    .cart-details p {
+        font-size: 14px;
+    }
+
+    .remove-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}

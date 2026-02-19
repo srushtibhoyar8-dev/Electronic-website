@@ -4,19 +4,29 @@
 <head>
   <title>ElectroShop</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
 <header class="navbar">
-  <h2>ElectroShop</h2>
+  
+  <!-- Left Side -->
+  <div class="nav-left">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h2 class="logo">ElectroShop</h2>
+  </div>
+
+  <!-- Right Side -->
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
   </ul>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
 </header>
+
 
 <div id="sidebar" class="sidebar">
   <button onclick="toggleMenu()">✖</button>
@@ -31,35 +41,113 @@
   <p>Best electronics at best prices</p>
   <a href="products.html" class="btn">Shop Now</a>
 </section>
+
+<!-- add new section to add to cart vali image -->
+
+<section class="products-container">
+  <h2 class="section-title">Our Products</h2>
+  <div id="product-list" class="product-grid">
+    </div>
+</section>
+
+<!--our products  -->
+
+    <h1 class="main-heading">Based on your browsing history</h1>
+
+    <div class="container">
+
+        <a href="#" class="card">
+            <div class="card-title">Save with Amazon Outlet</div>
+            <div class="mini-grid">
+                <div class="item">
+                    <div class="img-box"><img src="images/e1.jpg" alt="Fashion"></div>
+                    <span> Power Strip Multi Plug Expander</span>
+                </div>
+                <div class="item">
+                    <div class="img-box"><img src="images/e2.jpg" alt="Electronics"></div>
+                    <span>Meta Quest 3S 128GB </span>
+                </div>
+                <div class="item">
+                    <div class="img-box"><img src="images/e3.jpg" alt="Home"></div>
+                    <span>Home and kitchen</span>
+                </div>
+                <div class="item">
+                    <div class="img-box"><img src="images/e4.jpg" alt="Tools"></div>
+                    <span>Speaker</span>
+                </div>
+            </div>
+            <span class="footer-link">Shop Presidents' Day Sale</span>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-title">Featured in Computers & Accessories</div>
+            <div class="big-img-box">
+                <img src="images/lap-asus.jpg" alt="Laptop">
+            </div>
+            <div style="font-weight: bold; margin-top: 10px;">ASUS 15.6" Laptops...</div>
+            <div style="font-size: 18px; margin-top: 5px;">$289.99</div>
+            <span class="footer-link">Shop now</span>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-title">Date-night ready</div>
+            <div class="mini-grid">
+                <div class="item">
+                    <div class="img-box"><img src="images/e5.jpg" alt="Heels"></div>
+                    <span>Statement Heels</span>
+                </div>
+                <div class="item">
+                    <div class="img-box"><img src="images/e6.jpg" alt="Boots"></div>
+                    <span>500W USB C Charger Block</span>
+                </div>
+                <div class="item">
+                    <div class="img-box"><img src="images/e7.jpg" alt="Flats"></div>
+                    <span>Port Cable</span>
+                </div>
+                <div class="item">
+                    <div class="img-box"><img src="images/e8.jpg" alt="Accessories"></div>
+                    <span>Accessories</span>
+                </div>
+            </div>
+            <span class="footer-link">Shop event ready styles on Zappos</span>
+        </a>
+
+    </div>
+<!-- footer section -->
+
 <footer class="footer">
-  <div class="footer-container">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ElectroShop</h3>
+            <p>Your one-stop shop for the latest gadgets and electronics. Quality products at best prices.</p>
+        </div>
 
-    <div>
-      <h3>ElectroShop</h3>
-      <p>Best electronics at affordable prices.</p>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>Email: support@electroshop.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Nagpur, Maharashtra</p>
+        </div>
     </div>
 
-    <div>
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a><br>
-      <a href="products.html">Products</a><br>
-      <a href="contact.html">Contact</a>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ElectroShop. All Rights Reserved.</p>
     </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>Email: info@electroshop.com</p>
-      <p>Phone: +91 9876543210</p>
-    </div>
-
-  </div>
-
-  <p class="copy">
-    © 2026 ElectroShop | All Rights Reserved
-  </p>
 </footer>
 
 
 <script src="js/nav.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>

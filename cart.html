@@ -3,50 +3,73 @@
 <head>
   <title>Cart</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
 <header class="navbar">
-  <h2>ElectroShop</h2>
+  
+  <!-- Left Side -->
+  <div class="nav-left">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h2 class="logo">ElectroShop</h2>
+  </div>
+
+  <!-- Right Side -->
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
   </ul>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
 </header>
+
+
+<div id="sidebar" class="sidebar">
+  <button onclick="toggleMenu()">✖</button>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Cart</a>
+</div>
+
 <h1 > Your Items</h1><br>
 
 <div class="cart-items"></div>
 <h2>Total: ₹<span id="total">0</span></h2>
+
 <footer class="footer">
-  <div class="footer-container">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ElectroShop</h3>
+            <p>Your one-stop shop for the latest gadgets and electronics. Quality products at best prices.</p>
+        </div>
 
-    <div>
-      <h3>ElectroShop</h3>
-      <p>Best electronics at affordable prices.</p>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>Email: support@electroshop.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Nagpur, Maharashtra</p>
+        </div>
     </div>
 
-    <div>
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a><br>
-      <a href="products.html">Products</a><br>
-      <a href="contact.html">Contact</a>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ElectroShop. All Rights Reserved.</p>
     </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>Email: info@electroshop.com</p>
-      <p>Phone: +91 9876543210</p>
-    </div>
-
-  </div>
-
-  <p class="copy">
-    © 2026 ElectroShop | All Rights Reserved
-  </p>
 </footer>
+
 
 
 <script src="js/cart.js"></script>

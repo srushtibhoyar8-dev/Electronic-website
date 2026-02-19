@@ -1,0 +1,132 @@
+/* Footer Main Styling */
+.footer {
+    background-color: #232f3e; /* Amazon dark blue theme */
+    color: white;
+    padding: 40px 0 0 0;
+    margin-top: 50px; /* Page content se doori */
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    color: #febd69; /* Amazon orange color */
+    margin-bottom: 15px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #37475a;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #febd69;
+    padding-left: 5px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background-color: #131a22;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 1px solid #37475a;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    margin: 0;
+    color: #888;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section h4 {
+        border-bottom: none;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto; /* Isse footer hamesha bottom mein push ho jayega */
+}
+
+/* Extra Responsive Footer Media Query */
+@media (max-width: 576px) {
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-section h3 {
+        font-size: 20px;
+    }
+
+    .footer-section h4 {
+        font-size: 16px;
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 13px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}

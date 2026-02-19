@@ -3,18 +3,27 @@
 <head>
   <title>Products</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
 <header class="navbar">
-  <h2>ElectroShop</h2>
+  
+  <!-- Left Side -->
+  <div class="nav-left">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h2 class="logo">ElectroShop</h2>
+  </div>
+
+  <!-- Right Side -->
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
   </ul>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
 </header>
 
 <div id="sidebar" class="sidebar">
@@ -25,6 +34,8 @@
   <a href="cart.html">Cart</a>
 </div>
 
+
+<!-- search bar -->
 <div class="controls">
   <input type="text" id="search" placeholder="Search product">
 
@@ -38,37 +49,106 @@
 </div>
 
 <div class="products"></div>
+
+<!-- search script -->
+ <div class="products" id="productGrid">
+        </div>
+
+<script>
+       
+        const productData = [
+            { name: "Google Pixel 10", category: "Mobile", price: "$1200", img: "images/mob-google-pixel.jpg" },
+            { name: "iPhone 15 Pro", category: "Laptop", price: "$1200", img: "images/mob-iphone.jpg" },
+            { name: "OnePlus 15", category: "Mobile", price: "$999", img: "images/mob-oneplus.jpg" },
+            { name: "Samsung Galaxy", category: "Audio", price: "$150", img: "images/mob-samsung-galaxy.jpg" },
+            { name: "TCL 60 XE", category: "Laptop", price: "$999", img: "images/mob-tcl.jpg " }
+        ];
+
+        const productGrid = document.getElementById('productGrid');
+        const searchInput = document.getElementById('search');
+        const filterSelect = document.getElementById('filter');
+
+    
+        function displayProducts(products) {
+            productGrid.innerHTML = ""; 
+            
+            if(products.length === 0) {
+                productGrid.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No products found.</p>";
+                return;
+            }
+
+            products.forEach(item => {
+                productGrid.innerHTML += `
+                    <div class="product-card">
+                        <div class="img-container">
+                            <img src="${item.img}" alt="${item.name}">
+                        </div>
+                        <div>
+                            <div class="product-name">${item.name}</div>
+                            <div class="product-price">${item.price}</div>
+                            <button class="buy-btn" class="button" onclick="alert('Added to cart!')">Buy Now</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterLogic() {
+            const searchText = searchInput.value.toLowerCase();
+            const selectedCat = filterSelect.value;
+
+            const filtered = productData.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(searchText);
+                const matchesCat = (selectedCat === "all" || p.category === selectedCat);
+                return matchesSearch && matchesCat;
+            });
+
+            displayProducts(filtered);
+        }
+
+   
+        searchInput.addEventListener('input', filterLogic);
+        filterSelect.addEventListener('change', filterLogic);
+
+
+        displayProducts(productData);
+    </script>
+
 <footer class="footer">
-  <div class="footer-container">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ElectroShop</h3>
+            <p>Your one-stop shop for the latest gadgets and electronics. Quality products at best prices.</p>
+        </div>
 
-    <div>
-      <h3>ElectroShop</h3>
-      <p>Best electronics at affordable prices.</p>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>Email: support@electroshop.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Nagpur, Maharashtra</p>
+        </div>
     </div>
 
-    <div>
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a><br>
-      <a href="products.html">Products</a><br>
-      <a href="contact.html">Contact</a>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ElectroShop. All Rights Reserved.</p>
     </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>Email: info@electroshop.com</p>
-      <p>Phone: +91 9876543210</p>
-    </div>
-
-  </div>
-
-  <p class="copy">
-    © 2026 ElectroShop | All Rights Reserved
-  </p>
 </footer>
 
 
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/nav.js"></script>
+
+
 </body>
 </html>

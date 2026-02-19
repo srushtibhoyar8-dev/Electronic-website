@@ -1,0 +1,104 @@
+/* Contact Section Styling */
+.contact {
+    /* max-width: 500px; */
+    width: 450px;
+    margin: 60px auto; /* Center alignment */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact h2 {
+    text-align: center;
+    color: #232f3e;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Input & Textarea Styling */
+.contact input, 
+.contact textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Padding se width na badhe */
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.contact textarea {
+    height: 120px;
+    resize: none; /* User box ko khench na sake */
+}
+
+/* Focus Effect */
+.contact input:focus, 
+.contact textarea:focus {
+    border-color: #007185;
+    box-shadow: 0 0 5px rgba(0, 113, 133, 0.2);
+}
+
+/* Error Message */
+.error {
+    color: #cc0000;
+    font-size: 13px;
+    margin-top: 5px;
+    height: 15px; /* Space reserve rakhta hai taaki design hile na */
+    display: block;
+}
+
+/* Professional Submit Button */
+.contact button {
+    margin-top: 20px;
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    color: #111;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact button:hover {
+    background-color: #f7ca00;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+    .contact {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        width: 95%;
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    .contact h2 {
+        font-size: 22px;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contact button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
